@@ -37,9 +37,9 @@ console.log(`Kết quả S = ${S}`);
     Tìm số lớn nhất trong 3 số và hiển thị kết quả
 */
 
-var a = 5,
-  b = 6,
-  c = 7;
+var a = 0,
+  b = 0,
+  c = 2;
 var max = a;
 
 if (b > max) {
@@ -47,6 +47,8 @@ if (b > max) {
 }
 if (c > max) {
   max = c;
+} else {
+  max = a;
 }
 
 console.log(`Số lớn nhất là : ${max}`);
