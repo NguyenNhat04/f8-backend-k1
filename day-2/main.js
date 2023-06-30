@@ -99,23 +99,23 @@ Viết chương trình kiểm tra 1 số có phải số nguyên tố hay không
 */
 
 var number = 11;
-var isSoNguyenTo = true;
+var isPrime = true;
 
 if (!Number.isInteger(number)) {
   console.log(`${number} không là số nguyên`);
 } else {
   if (number <= 1) {
-    isSoNguyenTo = false;
+    isPrime = false;
   } else {
-    for (let i = 2; i < Math.sqrt(number); i++) {
+    for (let i = 2; i <= Math.sqrt(number); i++) {
       if (number % i === 0) {
-        isSoNguyenTo = false;
+        isPrime = false;
         break;
       }
     }
   }
 
-  if (isSoNguyenTo) {
+  if (isPrime) {
     console.log(`${number} là số nguyên tố`);
   } else {
     console.log(`${number} không là số nguyên tố`);
