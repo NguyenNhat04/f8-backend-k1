@@ -139,6 +139,6 @@ function numberToWords(number) {
 
   return words[number];
 }
-const number = 2000;
+const number = 10;
 const result = numberToLetters(number);
 console.log(result);
