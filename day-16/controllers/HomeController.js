@@ -32,8 +32,6 @@ module.exports = {
       // Set session
       req.session.login = false;
       req.flash("msg", "Vui lòng nhập đầy đủ thông tin");
-
-      console.log(req.flash("msg"));
       res.redirect("/dang-nhap");
     } else {
       req.session.login = false;
