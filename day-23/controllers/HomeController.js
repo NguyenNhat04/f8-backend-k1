@@ -1,5 +1,5 @@
 module.exports = {
   index: (req, res) => {
-    res.render("home/index", { user: req.session.user });
+    res.render("../views/home/index.ejs");
   },
 };

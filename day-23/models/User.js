@@ -10,9 +10,15 @@ const User = async () => {
         type: DataTypes.NUMBER,
         primaryKey: true,
       },
-      name: { type: DataTypes.STRING },
-      email: { type: DataTypes.STRING },
-      password: { type: DataTypes.STRING },
+      name: {
+        type: DataTypes.STRING,
+      },
+      email: {
+        type: DataTypes.STRING,
+      },
+      password: {
+        type: DataTypes.STRING,
+      },
     },
     {
       timestamps: false,
