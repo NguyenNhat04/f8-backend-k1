@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container py-3">
+      <div class="row justify-content-center">
+        <div class="col-6">
+          <h1 class="text-center">Đăng nhập</h1>
+
+          <div class="alert">
+            <span class="error" style="color: brown"><%= error ?? "" %></span>
+            <span class="success"><%= success ?? "" %></span>
+          </div>
+
+          <form action="" method="post">
+            <div class="mb-3">
+              <label>Email</label>
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                placeholder="Email..."
+              />
+              <span class="errorEmail" style="color: red"
+                ><%= errorEmail ?? "" %></span
+              >
+              <div class="invalid-feedback"></div>
+            </div>
+            <div class="mb-3">
+              <label>Mật khẩu</label>
+              <input
+                type="password"
+                name="password"
+                class="form-control"
+                placeholder="Mật khẩu..."
+              />
+              <span class="errorPass" style="color: blue"
+                ><%= errorPass ?? "" %></span
+              >
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary">Đăng nhập</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
