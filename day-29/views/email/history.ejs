@@ -1,0 +1,12 @@
+<h1>Lịch sử Email Gửi Đi</h1>
+<ul>
+  <% emailHistory.forEach((email) => { %>
+  <li>
+    <strong>Email gửi đến:</strong> <%= email.email %><br />
+    <strong>Tiêu đề:</strong> <%= email.subject %><br />
+    <strong>Trạng thái:</strong> <%= email.status %><br />
+    <strong>Thời gian gửi:</strong> <%= email.sentAt %><br />
+    <a href="/email/email-detail/<%= email.id %>">Xem chi tiết</a>
+  </li>
+  <% }) %>
+</ul>
