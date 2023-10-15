@@ -1,0 +1,39 @@
+<form action="" method="post">
+  <h2>Thiết lập Role</h2>
+  <div class="col mb-2">
+    <label for="name">Role Name:</label>
+    <input
+      type="text"
+      class="form-control"
+      name="role"
+      value="<%= role.name %>"
+      placeholder="Tên role..."
+    />
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Quyền</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div class="row">
+            <div class="col">
+              <% allPermissions.forEach((permission) => { %>
+              <label>
+                <input type="checkbox" name="permission"
+                value="<%=permission.dataValues.id %>" <%=
+                selectedPermissions.includes(permission.dataValues.id) ? checked
+                : "" %> /> <%= permission.value %>
+              </label>
+              <% }) %>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-primary">Lưu thay đổi</button>
+</form>
