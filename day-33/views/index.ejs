@@ -1,0 +1,61 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <h1 class="text-center">Shorten Link</h1>
+    <form id="shorten-form" method="post">
+      <div class="row">
+        <div class="col-md-8">
+          <input
+            type="text"
+            name="originLink"
+            class="form-control"
+            id="original-link"
+            placeholder="Enter the link to shorten"
+          />
+        </div>
+
+        <div class="col-md-1"></div>
+        <div class="col-md-3">
+          <button class="btn btn-primary" type="submit">Shorten URL</button>
+        </div>
+      </div>
+    </form>
+
+    <div class="mt-3">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Original URL</th>
+            <th scope="col">New URL</th>
+            <th scope="col">Change</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Views</th>
+          </tr>
+        </thead>
+        <tbody id="link-history">
+          <% links.forEach(link => { %>
+          <tr>
+            <td><a href="<%= link.fullVer %>"><%= link.fullVer %></a></td>
+            <td><a href="<%= link.shortVer %>"><%= link.shortVer %></a></td>
+            <td>
+              <a href="/update/<%= link.code %>" class="btn btn-secondary"
+                >Change</a
+              >
+            </td>
+            <td>
+              <form
+                method="POST"
+                action="/delete/<%= link.code %>"
+                style="display: inline"
+              >
+                <button type="submit" class="btn btn-danger">Delete</button>
+              </form>
+            </td>
+            <td><%= link.views %></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+      <a href="/auth/logout" class="btn btn-primary">Log out</a>
+    </div>
+  </div>
+</div>
